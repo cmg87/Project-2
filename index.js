@@ -17,5 +17,5 @@ require("./app/routing/htmlRoutes")(app);
 
 // START THE SERVER AND LISTEN FOR CHANGES
 app.listen(PORT, function() {
-  console.log("Kwyri is running on http://localhost/:" + PORT + " and watching ... \n");
+  console.log("Kwiri is running on http://localhost/:" + PORT + " and watching ... \n");
 });
