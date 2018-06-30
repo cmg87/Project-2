@@ -9,7 +9,7 @@ for(i in data){
     if(data[i].intmob == 1){
         total ++;
     }
-    if else{
+    else{
         other ++;
     }
 }
