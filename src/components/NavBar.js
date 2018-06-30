@@ -16,7 +16,7 @@ class NavBar extends Component {
                 <span className="icon-bar"></span>
               </Button>
               <a className="navbar-brand" href="/">
-                <img className="nav-logo" src="./assets/images/brand-logo-kwiri.png" />
+                <img className="nav-logo" src="./assets/images/brand-logo-kwiri.png" alt="Kwiri"/>
               </a>
             </div>
       
