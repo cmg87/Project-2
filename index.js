@@ -9,7 +9,7 @@ var PORT = process.env.PORT || 8080;
 // DIRECTS EXPRESS TO HANDLE PARSING AND SERVE STATIC FILES
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static('app/public'));
+app.use(express.static('./app/public'));
 
 // CREATE AND CONIFIGURE ROUTING OF DATA
 // require("./app/routing/apiRoutes")(app);

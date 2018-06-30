@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kwyri | Survey</title>
+  <title>Kwiri | Survey</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -36,16 +36,16 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/index.html">Home</a>
+            <a href="/">Home</a>
           </li>
           <li class="active">
-            <a href="/survey.html">Survey</a>
+            <a href="/survey">Survey</a>
           </li>
           <li>
-            <a href="/results.html">Results</a>
+            <a href="/results">Results</a>
           </li>
           <li>
-            <a href="/about.html">About</a>
+            <a href="/about">About</a>
           </li>
         </ul>
       </div>
@@ -56,8 +56,50 @@
 
   <div class="container">
     <h1>Kwiri > Survey</h1>
+
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#surveyModal" data-backdrop="static" data-keyboard="false">
+      Survey Modal
+    </button>
   </div>
 
+  <div id="surveyModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="surveyTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4>Question #</h4>
+        </div>
+        <div class="modal-body">
+          <div id="survey" class="survey" data-toggle="buttons">
+            <label class="btn btn-lg btn-default btn-block">
+              <span class="btn-label">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+              </span>
+              <input type="radio" name="q_answer" value="1">Option #1</label>
+            <label class="btn btn-lg btn-default btn-block">
+              <span class="glyph">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+              </span>
+              <input type="radio" name="q_answer" value="2">Option #2</label>
+            <label class="btn btn-lg btn-default btn-block">
+              <span class="glyph">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+              </span>
+              <input type="radio" name="q_answer" value="3">Option #3</label>
+            <label class="btn btn-lg btn-default btn-block">
+              <span class="glyph">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+              </span>
+              <input type="radio" name="q_answer" value="4">Option #4</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-orientation="cancel" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-orientation="previous">Previous</button>
+          <button type="button" class="btn btn-default" data-orientation="next">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>

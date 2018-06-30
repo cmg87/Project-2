@@ -24,3 +24,7 @@
 .navbar-default .navbar-nav>li>a {
   color: #5B8216;
 }
+
+label.btn-block{
+  text-align: left;
+}

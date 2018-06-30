@@ -5,27 +5,27 @@ module.exports = function(app) {
 
   // INDEX
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
   // SURVEY
   app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "/../public/survey.html"));
+    res.sendFile(path.join(__dirname, "../public/survey.html"));
   });
 
   // RESULTS
   app.get("/results", function(req, res) {
-    res.sendFile(path.join(__dirname, "/../public/results.html"));
+    res.sendFile(path.join(__dirname, "../public/results.html"));
   });
 
   // ABOUT
   app.get("/about", function(req, res) {
-    res.sendFile(path.join(__dirname, "/../public/about.html"));
+    res.sendFile(path.join(__dirname, "../public/about.html"));
   });
 
   // 404, ERROR
   app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "/../public/error.html"));
+    res.sendFile(path.join(__dirname, "../public/error.html"));
   });
 
 };
