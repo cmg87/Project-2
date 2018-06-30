@@ -1,10 +1,13 @@
 {
-  "name": "kwyri",
+  "name": "kwiri",
   "version": "1.0.0",
-  "description": "Kwyri - A Survey Application",
+  "description": "Kwiri - A Survey Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "react-scripts test --env=jsdom",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -19,7 +22,11 @@
   "homepage": "https://github.com/cmg87/Project-2#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.1",
     "express": "^4.16.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
   }
 }

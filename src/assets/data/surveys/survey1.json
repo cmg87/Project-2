@@ -1,0 +1,209 @@
+[
+    {
+        "EMINUSE": {
+            "type": "multi",
+            "text": "Do you use the internet or email, at least occasionally?",
+            "choices": [
+                "yes",
+                "no"
+            ]
+        },
+
+        "INTMOB": {
+            "type": "multi",
+            "text": "Do you access the internet on a cell phone, tablet or other mobile handheld device, at least occasionally?",
+            "choices": [
+                "yes",
+                "no"
+            ]
+        },
+
+        "INTFREQ": {
+            "type": "multi",
+            "text": "About how often do you use the internet?",
+            "choices":[
+                "Almost constantly",
+                "Several times a day",
+                "About once a week",
+                "Less often"
+            ],
+            "conditions": {
+                "EMINUSE": 1,
+                "INTMOB": 1,
+                "relation": "or"
+            }
+        },
+
+        "HOME4NW": {
+            "type": "multi",
+            "text": "Do you currently subscribe to internet service at HOME?",
+            "choices":[
+                "yes",
+                "no"
+            ],
+            "conditions": {
+                "EMINUSE": 1,
+                "INTMOB": 1,
+                "relation": "or"
+            }
+        },
+
+        "BBHOME1": {
+            "type": "multi",
+            "text": "Do you subscribe to dial-up internet service at home... OR do you subscribe to a higher-speed broadband service such as DSL, cable, or fiber optic service?",
+            "choices":[
+                "Dial-up",
+                "Higher-speed"
+            ],
+            "conditions": {
+                "HOME4NW": 1
+            }
+        },
+
+        "BBHOME2": {
+            "type": "multi",
+            "text": "Just to confirm, you use a dial-up connection to the internet at home, and not a higher-speed broadband connection?",
+            "choices":[
+                "Yes, dial-up",
+                "No, higher-speed connection"
+            ],
+            "conditions": {
+                "BBHOME1": 1
+            }
+        },
+
+        "DEVICE1a": {
+            "type": "multi",
+            "text": "Next, do you have a cell phone, or not?",
+            "choices":[
+                "yes",
+                "no"
+            ]
+        },
+
+        "SMART2": {
+            "type": "multi",
+            "text": "Is your cell phone a smartphone, or not?",
+            "choices":[
+                "yes",
+                "no"
+            ],
+            "conditions": {
+                "DEVICE1a": 1
+            }
+        },
+
+        "SNSINT2": {
+            "type": "multi",
+            "text": "Do you ever use social media sites like Facebook, Twitter or Instagram?",
+            "choices":[
+                "yes",
+                "no"
+            ]
+        },
+
+        "DEVICE1": {
+            "type": "multi",
+            "text": "Which of the following items do you own?",
+            "choices":[
+                "Tablet",
+                "desktop or laptop",
+                "gaming console"
+            ]
+        },
+
+        "WEB1": {
+            "type": "multi",
+            "text": "Please tell me if you ever use any of the following social media sites online or on your cell phone.",
+            "choices":[
+                "Twitter",
+                "Instagram",
+                "Facebook",
+                "Snapchat",
+                "YouTube",
+                "WhatsApp",
+                "Pinterest",
+                "LinkedIn"
+            ],
+            "sub_choices":[
+                "Several times a day",
+                "About once a day",
+                "A few times a week",
+                "Every few weeks",
+                "Less often"
+            ],
+            "conditions": {
+                "EMINUSE": 1,
+                "INTMOB": 1,
+                "DEVICE1a": 1,
+                "relation": "or"
+            }
+        },
+
+        "PIAL5": {
+            "type": "multi",
+            "text": "How difficult would it be, if at all, to give up the following things in your life?",
+            "choices":[
+                "Your television",
+                "Cell phone",
+                "internet",
+                "social media"
+            ],
+            "sub_choices":[
+                "Very",
+                "Somewhat",
+                "Not too hard",
+                "Not hard at all"
+            ]
+        },
+
+        "PIAL11": {
+            "type": "multi",
+            "text": "Overall, when you add up all the advantages and disadvantages of the internet, would you say the internet has mostly been a _____ for society?",
+            "choices":[
+                "Good thing",
+                "Bad thing"
+            ]
+        },
+
+        "PIAL12": {
+            "type": "multi",
+            "text": "How about you, personally? Overall, when you add up all the advantages and disadvantages of the internet, would you say the internet has mostly been a _____ for society?",
+            "choices":[
+                "Good thing",
+                "Bad thing",
+                "Some of both"
+            ],
+            "conditions":{
+                "EMINUSE": 1,
+                "INTMOB":1,
+                "relation":"or"
+            }
+        },
+
+        "BOOKS1": {
+            "type": "input",
+            "text": "During the past 12 months, about how many BOOKS did you read either all or part of the way through? Please include any print, electronic, or audiobooks you may have read or listened to."
+        },
+        
+        "BOOKS2": {
+            "type": "multi",
+            "text": "Thinking about all of the books you have read in the past 12 months, were any of those..",
+            "choices":[
+                "Printed books",
+                "Audio books",
+                "E-books"
+            ],
+            "sub_choices":[
+                "yes",
+                "no"
+            ],
+            "conditions":{
+                "BOOKS1": 1,
+                "relation": "greater than"
+            }
+        }
+
+        
+    }
+]
