@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 class NavBar extends Component {
     render() {
         return (
-          <link rel="stylesheet" href="./assets/css/navbar.css">
+          <div>
           <Nav className="navbar navbar-default navbar-static-top">
           <div className="container">
             <div className="navbar-header">
@@ -38,6 +38,7 @@ class NavBar extends Component {
             </div>
           </div>
         </Nav>
+        </div>
         )
     }
 }
