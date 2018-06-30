@@ -2,7 +2,7 @@
 /* BOOTSTRAP OVERRIDES */
 
 .navbar-default {
-  background-color: #EAF7D3;
+  background: #EAF7D3;
   border-color: #CDEE87;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-  background-color: #A1CD4D;
+  background: #A1CD4D;
   color: #ffffff;
 }
 
