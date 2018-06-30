@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# ignore os files
+.DS_Store
+
+# ignore vscode preferences
+.vscode/
