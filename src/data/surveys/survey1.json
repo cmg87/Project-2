@@ -1,5 +1,9 @@
 [
     {
+        "title": "Internet Core Trends Survey",
+        "summary": "This survey contains questions about social media use in 2018 and attitudes toward the internet and whether Americans think it's good or bad for society."
+    },
+    {
         "EMINUSE": {
             "type": "multi",
             "text": "Do you use the internet or email, at least occasionally?",
