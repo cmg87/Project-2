@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static('./app/public'));
 
 // CREATE AND CONIFIGURE ROUTING OF DATA
-// require("./app/routing/apiRoutes")(app);
+require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
 // START THE SERVER AND LISTEN FOR CHANGES
