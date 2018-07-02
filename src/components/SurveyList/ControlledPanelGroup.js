@@ -37,14 +37,8 @@ class Panels extends Component {
               </Panel.Heading>
               <Panel.Body collapsible>
                 {this.props.summary}
-                <Button className="btn btn-primary" style={buttonStyle}>Go</Button>
+                <Button className="btn btn-primary" style={buttonStyle} href="/#/survey">Go</Button>
               </Panel.Body>
-            </Panel>
-            <Panel eventKey="2">
-              <Panel.Heading>
-                <Panel.Title toggle>Panel heading 2</Panel.Title>
-              </Panel.Heading>
-              <Panel.Body collapsible>Panel content 2</Panel.Body>
             </Panel>
           </PanelGroup>
         </div>

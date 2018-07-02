@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Nav } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import { NavLink } from "react-router-dom";
 
 
 class NavBar extends Component {
@@ -23,16 +24,16 @@ class NavBar extends Component {
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
                 <li className="active">
-                  <a href="/">Home</a>
+                  <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                  <a href="/survey">Survey</a>
+                  <NavLink to="/survey">Survey</NavLink>
                 </li>
                 <li>
-                  <a href="/results">Results</a>
+                  <NavLink to="/results">Results</NavLink>
                 </li>
                 <li>
-                    <a href="/about">About</a>
+                    <NavLink to="/about">About</NavLink>
                 </li>
               </ul>
             </div>
