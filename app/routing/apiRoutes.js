@@ -16,7 +16,7 @@ const apiRouting = (app)=>{
         const user_results = req.body.results
         // Do magic that adds user results to database
     })
-
-
-
 }
+
+
+exports = apiRouting
