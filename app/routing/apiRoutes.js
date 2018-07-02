@@ -1,4 +1,4 @@
-const survey1 = require('../../src/data/surveys/survey1.son')
+const survey1 = require('../../src/data/surveys/survey1.json')
 
 const apiRouting = (app)=>{
     
@@ -19,4 +19,4 @@ const apiRouting = (app)=>{
 }
 
 
-exports = apiRouting
+module.exports = apiRouting
