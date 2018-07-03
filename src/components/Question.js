@@ -25,7 +25,7 @@ class Question extends Component {
     
     render() {
         if (!this.state.survey) {
-            return <div />
+            return <div>No fetched data</div>
         }
         return (
             <div>
