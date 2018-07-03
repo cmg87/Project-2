@@ -37,7 +37,9 @@ class Panels extends Component {
               </Panel.Heading>
               <Panel.Body collapsible>
                 {this.props.summary}
-                <Button className="btn btn-primary" style={buttonStyle} href="/#/survey">Go</Button>
+                <br />
+                <br />
+                <Button className="btn" style={buttonStyle} href="/#/survey">Go</Button>
               </Panel.Body>
             </Panel>
           </PanelGroup>
