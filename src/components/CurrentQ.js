@@ -13,39 +13,66 @@ class CurrentQ extends Component {
         super(props);
         this.createChoices = this.createChoices.bind(this);
         this.createChoicesSub = this.createChoicesSub.bind(this);
+        this.submitMulti = this.submitMulti.bind(this);
+
     }
 
     createChoices() {
-        let choicesBuild = '';
+        let choicesBuild = [];
         for (let i=0;i<this.props.choices.length;i++) {
-            choicesBuild += '<Button class="btn btn-primary" value="'+this.props.choices[i][0]+'">'+this.props.choices[i][1]+'</Button>';
+            choicesBuild.push(<Button onClick={(e) => this.submitMulti(this.props.choices[i][0], e)} bsStyle="primary" value={this.props.choices[i][0]} id={this.props.choices[i][1]} key={i}>{this.props.choices[i][1]}</Button>);
         }
-        return <div style={buttonStyle} dangerouslySetInnerHTML={{__html: choicesBuild}}></div>
+        return <div style={buttonStyle}>{choicesBuild}</div>
     }
 
     createChoicesSub() {
-        let choicesBuild = '';
-        let subChoices = '';
+        let choicesBuild = [];
+        let subChoices = [];
+        let subColumns = [];
 
-        subChoices += '<td><form>'
+        // Build table headers
+        for (let i=0;i<this.props.choices.length;i++) {
+            choicesBuild.push(<th key={i}>{this.props.choices[i][1]}</th>)
+        }
+
+        // Build choice groups
         for (let j=0;j<this.props.subChoices.length;j++) {
-            subChoices += '<div class="radio"><label><input type="radio" name="optionsRadios" id="optionsRadios'+(j+1)+'"  value="'+this.props.subChoices[j][0]+'">'+this.props.subChoices[j][1]+'</label></div><br />'
+            let id = "optionsRadios"+(j+1);
+            subChoices.push(<div className="radio" key={j}><label><input type="radio" name="optionsRadios" id={id}  value={this.props.subChoices[j][0]} />{this.props.subChoices[j][1]}</label></div>);
         }
-        subChoices += '</form></td>'
 
-        choicesBuild += '<thead><tr>'
-        for (let i=0;i<this.props.choices.length;i++) {
-            choicesBuild += '<th>'+this.props.choices[i][1]+'</th>'
+        // Build choice columns
+        for (let k=0;k<this.props.choices.length;k++) {
+            subColumns.push(<td key={k}><form>{subChoices}</form></td>);
         }
-        choicesBuild +='</tr></thead><tbody>';
-        choicesBuild += '<tr>'
-        for (let i=0;i<this.props.choices.length;i++) {
-            choicesBuild += subChoices;
-        }
-        choicesBuild += '</tr>'
-        
-        choicesBuild += '</tbody>';
+
+        return (
+            <table className="table">
+                <thead>
+                    <tr>
+                        {choicesBuild}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {subColumns}
+                    </tr>
+                </tbody>
+            </table>
+        )
+
         return <table class="table" dangerouslySetInnerHTML={{__html: choicesBuild}}></table>;
+    }
+
+    submitMulti(value) {
+        let answer = {};
+        answer[this.props.code] = value;
+        console.log(answer);
+    }
+
+    submitNumber() {
+        let value = document.getElementById("answerInput").value;
+        console.log(value);
     }
 
     render() {
@@ -78,11 +105,12 @@ class CurrentQ extends Component {
                     <input type="number" class="form-control" id="answerInput" placeholder="Enter number here" />
                     <br />
                     <br />
-                    <Button bsStyle="primary">Submit</Button>
+                    <Button bsStyle="primary" onClick={this.submitNumber}>Submit</Button>
                 </Panel.Body>
             </Panel>
             )
         }
+
 
         if (this.props.type == 'multi-sub') {
             return(

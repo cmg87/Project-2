@@ -7,7 +7,7 @@ class ParseQ extends Component {
         const current = this.props.current;
         const keys = Object.keys(survey[1]);
         const code = (keys[current-1]);
-        const qBody = survey[1][code];
+        const qBody = survey[1]['WEB1'];
         console.log(qBody);
         let choices = [];
 
@@ -58,19 +58,19 @@ class ParseQ extends Component {
         // TYPES
         if (qBody.type == 'multi') {
             return (
-                <CurrentQ number={this.props.current} type="multi" text={qBody.text} choices={Object.entries(qBody.choices)} />
+                <CurrentQ number={this.props.current} code={code} type="multi" text={qBody.text} choices={Object.entries(qBody.choices)} />
             )
         }
 
         if (qBody.type == 'number') {
             return (
-                <CurrentQ number={this.props.current} type="number" text={qBody.text} />
+                <CurrentQ number={this.props.current} code={code} type="number" text={qBody.text} />
             )
         }
 
         if (qBody.type == 'multi-sub') {
             return (
-                <CurrentQ number={this.props.current} type="multi-sub" text={qBody.text} choices={Object.entries(qBody.choices)} subChoices={Object.entries(qBody.sub_choices)} />
+                <CurrentQ number={this.props.current} code={code} type="multi-sub" text={qBody.text} choices={Object.entries(qBody.choices)} subChoices={Object.entries(qBody.sub_choices)} />
             )
         }
 
