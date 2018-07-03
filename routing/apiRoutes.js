@@ -1,4 +1,4 @@
-const survey1 = require('../../src/data/surveys/survey1.json')
+const survey1 = require('../src/data/surveys/survey1.json')
 
 const apiRouting = (app)=>{
     
