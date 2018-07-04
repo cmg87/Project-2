@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-// import { Table } from 'react-bootstrap';
 
 const buttonStyle = {
   margin: '0 auto',
@@ -94,7 +93,7 @@ class CurrentQ extends Component {
         for (let i=0;i<this.props.choices.length;i++) {
             // For each subchoice of each choice
             for (let j=0;j<this.props.subChoices.length;j++) {
-                // let choice = forms[alpha[i]].elements;
+
                 let subchoice = 'answer'+(j+1);
 
                 // If radio button checked, push info to answers

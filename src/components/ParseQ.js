@@ -5,15 +5,14 @@ class ParseQ extends Component {
     constructor(props) {
         super(props);
         this.updateAnswers = this.updateAnswers.bind(this);
-        this.nextQuestion = this.nextQuestion.bind(this);
+    }
+
+    componentWillMount() {
+        
     }
 
     updateAnswers(answer) {
         this.props.updateAnswers(answer);       
-    }
-
-    nextQuestion() {
-        this.props.nextQuestion();
     }
 
     render() {
@@ -22,31 +21,41 @@ class ParseQ extends Component {
         const keys = Object.keys(survey[1]);
         const code = (keys[current-1]);
         const qBody = survey[1][code];
-        // console.log(qBody);
-        // let choices = [];
+        const total = this.props.total;
 
         // Turn answers array back into an object
         let answersRaw = this.props.answers;
         let answers = answersRaw.reduce(function(prev,curr){prev[curr[0]]=curr[1];return prev;},{});
 
+        // END OF SURVEY CHECK
+        if (current > total) {
+            this.props.endSurvey();
+        }
+
         // CONDITIONS
         // If conditions exist
+        console.log(code);
+        console.log(qBody);
         if (qBody.conditions) {
             // Save relation & conditions keys
             let relation = qBody.conditions['relation'];
             let conditionKeys = Object.keys(qBody.conditions);
 
             if (relation === 'or') {
+                console.log(conditionKeys.length - 1);
+
                 for(let i=0;i<(conditionKeys.length - 1);i++) {
                     // If answer exists
                     console.log(answers);
+                    console.log(code);
                     console.log(answers[conditionKeys[i]]);
                     console.log(qBody.conditions[conditionKeys[i]]);
                     if (answers[conditionKeys[i]]) {
                         // If conditional check fails
                         if (answers[conditionKeys[i]] !== qBody.conditions[conditionKeys[i]]) {
-                            // this.nextQuestion();
+                            this.props.nextQuestion();
                             console.log("Skip question");
+                            break;
                         }
                     }
                 }
@@ -58,11 +67,9 @@ class ParseQ extends Component {
                         console.log('check');
                         // If conditional check fails
                         if (answers[conditionKeys[i]] <= qBody.conditions[conditionKeys[i]]) {
-                            //
-                            // Code to skip question
-                            // nextQuestion();
-                            //
+                            this.props.nextQuestion();
                             console.log("Skip question");
+                            break;
                         }
                     }
                 }
