@@ -6,12 +6,9 @@ class Question extends Component {
         super(props);
         this.state = {
             survey: null,
-            current: 1,
-            total: null,
             answers: {}
         };
         this.updateAnswers = this.updateAnswers.bind(this);
-        this.nextQuestion = this.nextQuestion.bind(this);
         this.endSurvey = this.endSurvey.bind(this);
     }
 
@@ -21,7 +18,7 @@ class Question extends Component {
                 return results.json();
             }).then(data => {
                 console.log(data);
-                this.setState({ survey: data, total: Object.keys(data[1]).length });
+                this.setState({ survey: data });
             });
     }
 
@@ -38,12 +35,6 @@ class Question extends Component {
         );
     }
 
-    nextQuestion() {
-        this.setState({
-            current: this.state.current + 1
-        });
-    }
-
     endSurvey() {
         window.location.href = '/#/results';
     }
@@ -54,7 +45,7 @@ class Question extends Component {
         }
         return (
             <div>
-                <ParseQ current={this.state.current} total={this.state.total} survey={this.state.survey} answers={Object.entries(this.state.answers)} updateAnswers={this.updateAnswers} nextQuestion={this.nextQuestion} endSurvey={this.endSurvey} />
+                <ParseQ survey={this.state.survey} answers={Object.entries(this.state.answers)} updateAnswers={this.updateAnswers} nextQuestion={this.nextQuestion} endSurvey={this.endSurvey} />
             </div>
         );
     }
