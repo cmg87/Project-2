@@ -2,13 +2,27 @@ import React, { Component } from 'react';
 import CurrentQ from './CurrentQ';
 
 class ParseQ extends Component {
+    constructor(props) {
+        super(props);
+        this.updateAnswers = this.updateAnswers.bind(this);
+        this.nextQuestion = this.nextQuestion.bind(this);
+    }
+
+    updateAnswers(answer) {
+        this.props.updateAnswers(answer);       
+    }
+
+    nextQuestion() {
+        this.props.nextQuestion();
+    }
+
     render() {
         const survey = this.props.survey;
         const current = this.props.current;
         const keys = Object.keys(survey[1]);
         const code = (keys[current-1]);
-        const qBody = survey[1]['WEB1'];
-        console.log(qBody);
+        const qBody = survey[1][code];
+        // console.log(qBody);
         let choices = [];
 
         // Turn answers array back into an object
@@ -25,13 +39,13 @@ class ParseQ extends Component {
             if (relation == 'or') {
                 for(let i=0;i<(conditionKeys.length - 1);i++) {
                     // If answer exists
+                    console.log(answers);
+                    console.log(answers[conditionKeys[i]]);
+                    console.log(qBody.conditions[conditionKeys[i]]);
                     if (answers[conditionKeys[i]]) {
                         // If conditional check fails
                         if (answers[conditionKeys[i]] !== qBody.conditions[conditionKeys[i]]) {
-                            //
-                            // Code to skip question
-                            // nextQuestion();
-                            //
+                            // this.nextQuestion();
                             console.log("Skip question");
                         }
                     }
@@ -58,19 +72,19 @@ class ParseQ extends Component {
         // TYPES
         if (qBody.type == 'multi') {
             return (
-                <CurrentQ number={this.props.current} code={code} type="multi" text={qBody.text} choices={Object.entries(qBody.choices)} />
+                <CurrentQ number={this.props.current} code={code} type="multi" text={qBody.text} choices={Object.entries(qBody.choices)} updateAnswers={this.props.updateAnswers} nextQuestion={this.props.nextQuestion} />
             )
         }
 
         if (qBody.type == 'number') {
             return (
-                <CurrentQ number={this.props.current} code={code} type="number" text={qBody.text} />
+                <CurrentQ number={this.props.current} code={code} type="number" text={qBody.text} updateAnswers={this.props.updateAnswers} nextQuestion={this.props.nextQuestion} />
             )
         }
 
         if (qBody.type == 'multi-sub') {
             return (
-                <CurrentQ number={this.props.current} code={code} type="multi-sub" text={qBody.text} choices={Object.entries(qBody.choices)} subChoices={Object.entries(qBody.sub_choices)} />
+                <CurrentQ number={this.props.current} code={code} type="multi-sub" text={qBody.text} choices={Object.entries(qBody.choices)} subChoices={Object.entries(qBody.sub_choices)} updateAnswers={this.props.updateAnswers} nextQuestion={this.props.nextQuestion}/>
             )
         }
 
