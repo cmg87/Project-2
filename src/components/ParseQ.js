@@ -23,7 +23,7 @@ class ParseQ extends Component {
         const code = (keys[current-1]);
         const qBody = survey[1][code];
         // console.log(qBody);
-        let choices = [];
+        // let choices = [];
 
         // Turn answers array back into an object
         let answersRaw = this.props.answers;
@@ -36,7 +36,7 @@ class ParseQ extends Component {
             let relation = qBody.conditions['relation'];
             let conditionKeys = Object.keys(qBody.conditions);
 
-            if (relation == 'or') {
+            if (relation === 'or') {
                 for(let i=0;i<(conditionKeys.length - 1);i++) {
                     // If answer exists
                     console.log(answers);
@@ -51,7 +51,7 @@ class ParseQ extends Component {
                     }
                 }
             }
-            if (relation == 'greater than') {
+            if (relation === 'greater than') {
                 for(let i=0;i<(conditionKeys.length - 1);i++) {
                     // If answer exists
                     if (answers[conditionKeys[i]] >= 0) {
@@ -70,19 +70,19 @@ class ParseQ extends Component {
         }
 
         // TYPES
-        if (qBody.type == 'multi') {
+        if (qBody.type === 'multi') {
             return (
                 <CurrentQ number={this.props.current} code={code} type="multi" text={qBody.text} choices={Object.entries(qBody.choices)} updateAnswers={this.props.updateAnswers} nextQuestion={this.props.nextQuestion} />
             )
         }
 
-        if (qBody.type == 'number') {
+        if (qBody.type === 'number') {
             return (
                 <CurrentQ number={this.props.current} code={code} type="number" text={qBody.text} updateAnswers={this.props.updateAnswers} nextQuestion={this.props.nextQuestion} />
             )
         }
 
-        if (qBody.type == 'multi-sub') {
+        if (qBody.type === 'multi-sub') {
             return (
                 <CurrentQ number={this.props.current} code={code} type="multi-sub" text={qBody.text} choices={Object.entries(qBody.choices)} subChoices={Object.entries(qBody.sub_choices)} updateAnswers={this.props.updateAnswers} nextQuestion={this.props.nextQuestion}/>
             )
