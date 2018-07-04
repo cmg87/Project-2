@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import Home from './containers/Home';
 import Survey from './containers/Survey';
 import Results from './containers/Results';
+import User from './containers/User'
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
           <div className="content">
           <NavBar />
             <Route exact path="/" component={Home}/>
+            <Route path="/user" component={User}/>
             <Route path="/survey" component={Survey}/>
             <Route path="/results" component={Results}/>
           </div>
