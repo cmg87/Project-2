@@ -38,3 +38,8 @@ h2 {
   background: #B7D0D8;
   border-top: 0;
 }
+
+.frmRequired {
+  padding-left: 4px;
+  color: red;
+}
