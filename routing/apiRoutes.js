@@ -16,6 +16,13 @@ const apiRouting = (app)=>{
         const user_results = req.body.results
         // Do magic that adds user results to database
     })
+
+    app.post('/api/addUser', (req,res)=>{
+        // Get user information when starting a survey
+        const newUser = req.body
+        // Do magic that adds user information to database
+        console.log(newUser)        
+    })    
 }
 
 
