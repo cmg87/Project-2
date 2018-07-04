@@ -93,6 +93,7 @@ class CurrentQ extends Component {
         for (let i=0;i<this.props.choices.length;i++) {
             // For each subchoice of each choice
             for (let j=0;j<this.props.subChoices.length;j++) {
+
                 let subchoice = 'answer'+(j+1);
 
                 // If radio button checked, push info to answers

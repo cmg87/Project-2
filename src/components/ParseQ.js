@@ -43,6 +43,7 @@ class ParseQ extends Component {
 
             if (relation === 'or') {
                 console.log(conditionKeys.length - 1);
+
                 for(let i=0;i<(conditionKeys.length - 1);i++) {
                     // If answer exists
                     console.log(answers);
