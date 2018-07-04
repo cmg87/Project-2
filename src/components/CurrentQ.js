@@ -15,8 +15,6 @@ class CurrentQ extends Component {
         this.submitMulti = this.submitMulti.bind(this);
         this.submitNumber = this.submitNumber.bind(this);
         this.submitMultiSub = this.submitMultiSub.bind(this);
-        this.sendAnswer = this.sendAnswer.bind(this);
-        this.nextQuestion = this.nextQuestion.bind(this);
     }
 
     createChoices() {
@@ -70,8 +68,8 @@ class CurrentQ extends Component {
         let answer = {};
         answer[this.props.code] = value;
         console.log(answer);
-        this.sendAnswer(answer);
-        this.nextQuestion();
+        this.props.updateAnswers(answer);
+        this.props.nextQuestion();
     }
 
     submitNumber() {
@@ -79,8 +77,8 @@ class CurrentQ extends Component {
         let value = document.getElementById("answerInput").value;
         answer[this.props.code] = value;
         console.log(value);
-        this.sendAnswer(answer);
-        this.nextQuestion();
+        this.props.updateAnswers(answer);
+        this.props.nextQuestion();
     }
 
     submitMultiSub() {
@@ -103,17 +101,10 @@ class CurrentQ extends Component {
             }
         }
         console.log(answer);
-        this.sendAnswer(answer);
-        this.nextQuestion();
-    }
-
-    sendAnswer(answer) {
         this.props.updateAnswers(answer);
-    }
-
-    nextQuestion() {
         this.props.nextQuestion();
     }
+
 
     render() {
         if (this.props.type === 'multi') {
