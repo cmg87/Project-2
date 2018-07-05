@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ea76bce-4f1d-4372-a127-e0508bcc4add" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/controllers/controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/logic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="5ea76bce-4f1d-4372-a127-e0508bcc4add" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -238,12 +234,12 @@
       <workItem from="1530379223072" duration="3761000" />
       <workItem from="1530541940298" duration="11355000" />
       <workItem from="1530749223808" duration="106000" />
-      <workItem from="1530749386959" duration="1186000" />
+      <workItem from="1530749386959" duration="1431000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20512000" />
+    <option name="totallyTimeSpent" value="20757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
