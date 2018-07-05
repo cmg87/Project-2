@@ -32,8 +32,8 @@
                 "4":"Less often"
             },
             "conditions": {
-                "EMINUSE": 1,
-                "INTMOB": 1,
+                "EMINUSE": "1",
+                "INTMOB": "1",
                 "relation": "or"
             }
         },
@@ -46,8 +46,8 @@
                 "2": "No"
             },
             "conditions": {
-                "EMINUSE": 1,
-                "INTMOB": 1,
+                "EMINUSE": "1",
+                "INTMOB": "1",
                 "relation": "or"
             }
         },
@@ -60,7 +60,7 @@
                 "2":"Higher-speed"
             },
             "conditions": {
-                "HOME4NW": 1
+                "HOME4NW": "1"
             }
         },
 
@@ -72,7 +72,7 @@
                 "2":"No, higher-speed connection"
             },
             "conditions": {
-                "BBHOME1": 1
+                "BBHOME1": "1"
             }
         },
 
@@ -93,7 +93,7 @@
                 "2": "No"
             },
             "conditions": {
-                "DEVICE1a": 1
+                "DEVICE1a": "1"
             }
         },
 
@@ -107,12 +107,16 @@
         },
 
         "DEVICE1": {
-            "type": "check",
+            "type": "multi-sub",
             "text": "Which of the following items do you own?",
             "choices":{
                 "1":"Tablet",
                 "2":"Desktop or Laptop",
                 "3":"Gaming Console"
+            },
+            "sub_choices":{
+                "1":"Yes",
+                "2":"No"
             }
         },
 
@@ -134,9 +138,9 @@
                 "2":"No"
             },
             "conditions": {
-                "EMINUSE": 1,
-                "INTMOB": 1,
-                "DEVICE1a": 1,
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
                 "relation": "or"
             }
         },
@@ -152,7 +156,7 @@
                 "5":"Less often"
             },
             "conditions": {
-                "WEB1a": 1
+                "WEB1a": "1"
             }
         },
 
@@ -167,7 +171,7 @@
                 "5":"Less often"
             },
             "conditions": {
-                "WEB1b": 1
+                "WEB1b": "1"
             }
         },
 
@@ -182,7 +186,7 @@
                 "5":"Less often"
             },
             "conditions": {
-                "WEB1c": 1
+                "WEB1c": "1"
             }
         },
 
@@ -197,7 +201,7 @@
                 "5":"Less often"
             },
             "conditions": {
-                "WEB1d": 1
+                "WEB1d": "1"
             }
         },
 
@@ -212,7 +216,7 @@
                 "5":"Less often"
             },
             "conditions": {
-                "WEB1e": 1
+                "WEB1e": "1"
             }
         },
 
@@ -251,8 +255,8 @@
                 "3":"Some of both"
             },
             "conditions":{
-                "EMINUSE": 1,
-                "INTMOB":1,
+                "EMINUSE": "1",
+                "INTMOB":"1",
                 "relation":"or"
             }
         },

@@ -6,11 +6,10 @@ class Question extends Component {
         super(props);
         this.state = {
             survey: null,
-            current: 1,
-            answers: {
-                "BOOKS1":0
-            }
+            answers: {}
         };
+        this.updateAnswers = this.updateAnswers.bind(this);
+        this.endSurvey = this.endSurvey.bind(this);
     }
 
     componentWillMount() {
@@ -22,6 +21,23 @@ class Question extends Component {
                 this.setState({ survey: data });
             });
     }
+
+    updateAnswers(answer) {
+        let newAnswers = Object.assign(answer, this.state.answers);
+        console.log(newAnswers);
+
+        this.setState({
+            answers: newAnswers
+        },
+        function() {
+            console.log(this.state.answers);
+        }
+        );
+    }
+
+    endSurvey() {
+        window.location.href = '/#/results';
+    }
     
     render() {
         if (!this.state.survey) {
@@ -29,7 +45,7 @@ class Question extends Component {
         }
         return (
             <div>
-                <ParseQ current={this.state.current} survey={this.state.survey} answers={Object.entries(this.state.answers)} />
+                <ParseQ survey={this.state.survey} answers={Object.entries(this.state.answers)} updateAnswers={this.updateAnswers} nextQuestion={this.nextQuestion} endSurvey={this.endSurvey} />
             </div>
         );
     }
