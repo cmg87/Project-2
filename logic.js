@@ -38,3 +38,19 @@ let eminuse = function (data) {
     let total = usrNo + usrYes;
     return({'eminuse': {'1':  parseInt((usrYes/total)*100), '2' :parseInt((usrNo/total)*100)}});
 };
+
+let intmob = function (data) {
+    let usrYes=0;
+    let usrNo=0;
+    for(let x in data){
+        if(data[x].intmob == 1){
+            usrYes++;
+        }else{
+            usrNo++;
+        }
+    }
+    let total = usrNo + usrYes;
+    return({'intmob': {'1':  parseInt((usrYes/total)*100), '2' :parseInt((usrNo/total)*100)}});
+};
+
+module.exports = getData;
