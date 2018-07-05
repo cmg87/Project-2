@@ -25,17 +25,40 @@ let getData = {
             // console.log(data);
             let user = [];
             let stats = {
-                'eminuse': eminuse(data),
-                'intmob': intmob(data),
-                'intfreq': intfreq(data),
-                'home4nw' : home4nw(data),
-                'bbhome1' : bbhome1(data),
-                'device1a' : device1a(data),
-                'smart2' : smart2(data),
-                'snsint2': snsint2(data),
-
-
-
+                'eminuse': results1(data, 'eminuse'),
+                'intmob': results1(data, 'intmob'),
+                'intfreq': scale(data, 'intfreq'),
+                'home4nw': results1(data, 'home4nw'),
+                'bbhome1': results1(data, 'bbhome1'),
+                'device1a': results1(data, 'device1a'),
+                'smart2': results1(data, 'smart2'),
+                'snsint2': results1(data, 'snsint2'),
+                'device1b': results1(data, 'device1b'),
+                'device1c': results1(data, 'device1c'),
+                'device1d': results1(data, 'device1d'),
+                'web1a': results1(data, 'web1a'),
+                'web1b': results1(data, 'web1b'),
+                'web1c': results1(data, 'web1c'),
+                'web1d': results1(data, 'web1d'),
+                'web1e': results1(data, 'web1e'),
+                'web1f': results1(data, 'web1f'),
+                'web1g': results1(data, 'web1g'),
+                'web1h': results1(data, 'web1h'),
+                'sns2a': scale(data, 'sns2a'),
+                'sns2b': scale(data, 'sns2b'),
+                'sns2c': scale(data, 'sns2c'),
+                'sns2d': scale(data, 'sns2d'),
+                'sns2e': scale(data, 'sns2e'),
+                'pial5a': scale(data, 'pial5a'),
+                'pial5b': scale(data, 'pial5b'),
+                'pial5c': scale(data, 'pial5c'),
+                'pial5d': scale(data, 'pial5d'),
+                'pial11': results1(data, 'pial11'),
+                'pial12': results2(data, 'pial12'),
+                'books1': results3(data, 'books1'),
+                'books2a': results1(data, 'books2a'),
+                'books2b': results1(data, 'books2b'),
+                'books2c': results1(data, 'books2c'),
 
 
             };
@@ -49,12 +72,12 @@ let getData = {
 
 getData.stats(1, 65, 6, 1, 6);
 
-//Do you use the internet or email, at least occasionally?
-let eminuse = function (data) {
+
+let results1 = function (data, question) {
     let usrYes = 0;
     let usrNo = 0;
     for (let x in data) {
-        if (data[x].eminuse == 1) {
+        if (data[x][question] == 1) {
             usrYes++;
         } else {
             usrNo++;
@@ -64,124 +87,84 @@ let eminuse = function (data) {
     return ({'1': parseInt((usrYes / total) * 100), '2': parseInt((usrNo / total) * 100)});
 };
 
-//Do you access the internet on a cell phone, tablet or other mobile handheld device, at least occasionally?
-let intmob = function (data) {
+
+let results2 = function (data, question) {
     let usrYes = 0;
     let usrNo = 0;
+    let other = 0;
     for (let x in data) {
-        if (data[x].intmob == 1) {
+        if (data[x][question] == 1 ) {
             usrYes++;
-        } else {
+        } else if (data[x][question] == 2) {
             usrNo++;
+        } else {
+            other++;
         }
     }
-    let total = usrNo + usrYes;
-    return ({'1': parseInt((usrYes / total) * 100), '2': parseInt((usrNo / total) * 100)});
+    let total = usrNo + usrYes + other;
+    return ({
+        '1': parseInt((usrYes / total) * 100),
+        '2': parseInt((usrNo / total) * 100),
+        '3': parseInt((other / total) * 100)
+    });
 };
 
-//About how often do you use the internet?
-let intfreq = function (data) {
+
+let results3 = function (data, question) {
+    let usrYes = 0;
+    let usrNo = 0;
+    let other = 0;
+    for (let x in data) {
+        if (data[x][question] <= 4) {
+            usrYes++;
+        } else if (data[x][question] <= 9) {
+            usrNo++;
+        } else {
+            other++;
+        }
+    }
+    let total = usrNo + usrYes + other;
+    return ({
+        '1': parseInt((usrYes / total) * 100),
+        '2': parseInt((usrNo / total) * 100),
+        '3': parseInt((other / total) * 100)
+    });
+};
+
+
+
+
+
+
+let scale = function (data, question) {
     let scale1 = 0;
     scale2 = 0;
     scale3 = 0;
     scale4 = 0;
     scale5 = 0;
     for (let x in data) {
-        if (data[x].intfreq == 1) {
+        if (data[x][question] == 1) {
             scale1++;
-        }else if(data[x].intfreq == 2){
+        } else if (data[x][question] == 2) {
             scale2++;
-        }else if(data[x].intfreq == 3){
+        } else if (data[x][question] == 3) {
             scale3++;
-        }else if(data[x].intfreq == 4){
+        } else if (data[x][question] == 4) {
             scale4++;
-        }else if(data[x].intfreq == 5){
+        } else if (data[x][question] == 5) {
             scale5++;
         }
     }
-    let total = scale1+scale2+scale3+scale4+scale5;
+    let total = scale1 + scale2 + scale3 + scale4 + scale5;
     // console.log(total);
-    return ({'1': parseInt((scale1/ total) * 100), '2': parseInt((scale2 / total) * 100), '3': parseInt((scale3 / total) * 100), '4': parseInt((scale4 / total) * 100), '5': parseInt((scale5 / total) * 100)});
+    return ({
+        '1': parseInt((scale1 / total) * 100),
+        '2': parseInt((scale2 / total) * 100),
+        '3': parseInt((scale3 / total) * 100),
+        '4': parseInt((scale4 / total) * 100),
+        '5': parseInt((scale5 / total) * 100)
+    });
 };
-
-//HOME4NW.	Do you currently subscribe to internet service at HOME?
-let home4nw = function (data) {
-    let usrYes = 0;
-    let usrNo = 0;
-    for (let x in data) {
-        if (data[x].home4nw == 1) {
-            usrYes++;
-        } else {
-            usrNo++;
-        }
-    }
-    let total = usrNo + usrYes;
-    return ({'1': parseInt((usrYes / total) * 100), '2': parseInt((usrNo / total) * 100)});
-};
-
-//BBHOME1.	Do you subscribe to dial-up internet service at home... OR do you subscribe to a higher-speed broadband service such as DSL, cable, or fiber optic service?
-let bbhome1 = function (data) {
-    let usrYes = 0;
-    let usrNo = 0;
-    for (let x in data) {
-        if (data[x].bbhome1 == 1) {
-            usrYes++;
-        } else {
-            usrNo++;
-        }
-    }
-    let total = usrNo + usrYes;
-    return ({'1': parseInt((usrYes / total) * 100), '2': parseInt((usrNo / total) * 100)});
-};
-
-
-//DEVICE1a.	Next, do you have a cell phone, or not?
-let device1a = function (data) {
-    let usrYes = 0;
-    let usrNo = 0;
-    for (let x in data) {
-        if (data[x].device1a == 1) {
-            usrYes++;
-        } else {
-            usrNo++;
-        }
-    }
-    let total = usrNo + usrYes;
-    return ({'1': parseInt((usrYes / total) * 100), '2': parseInt((usrNo / total) * 100)});
-};
-
-//SMART2.	Is your cell phone a smartphone, or not?
-let smart2 = function (data) {
-    let usrYes = 0;
-    let usrNo = 0;
-    for (let x in data) {
-        if (data[x].smart2 == 1) {
-            usrYes++;
-        } else {
-            usrNo++;
-        }
-    }
-    let total = usrNo + usrYes;
-    return ({'1': parseInt((usrYes / total) * 100), '2': parseInt((usrNo / total) * 100)});
-};
-
-//SNSINT2.	Do you ever use social media sites like Facebook, Twitter or Instagram?
-let snsint2 = function (data) {
-    let usrYes = 0;
-    let usrNo = 0;
-    for (let x in data) {
-        if (data[x].snsint2 == 1) {
-            usrYes++;
-        } else {
-            usrNo++;
-        }
-    }
-    let total = usrNo + usrYes;
-    return ({'1': parseInt((usrYes / total) * 100), '2': parseInt((usrNo / total) * 100)});
-};
-
-
-
 
 
 module.exports = getData;
