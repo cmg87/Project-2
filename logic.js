@@ -63,15 +63,12 @@ let getData = {
 
             };
             user.push(stats);
-            console.log(user);
+            return user;
         });
 
     }
 
 };
-
-getData.stats(1, 65, 6, 1, 6);
-
 
 let results1 = function (data, question) {
     let usrYes = 0;
