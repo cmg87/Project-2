@@ -1,7 +1,7 @@
-/* jshint indent: 1 */
+
 
 module.exports = function(sequelize, DataTypes) {
-	let data = sequelize.define('data', {
+	let Data = sequelize.define('data', {
 		respid: {
 			type: DataTypes.INTEGER(10),
 			allowNull: true,
