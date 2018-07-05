@@ -7,7 +7,7 @@ const apiRouting = (app)=>{
         res.json(survey1)
     })
 
-    app.get('/api/estResults', (req,res)=>{
+    app.get('/api/getResults', (req,res)=>{
         const params = req.body.params
         res.json(getData.stats(params))
     })
