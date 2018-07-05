@@ -4,9 +4,9 @@ const Op = Sequelize.Op;
 let getData = {
 
     stats: function (gender, age, income, race, education) {
-        let usrAvg = [];
-        let usrYes = 0;
-        let usrNo = 0;
+        // let usrAvg = [];
+        // let usrYes = 0;
+        // let usrNo = 0;
         if(age = 25){
             age = {[Op.between]: [18, 30]};
         }
@@ -14,14 +14,9 @@ let getData = {
             where: {sex: gender, age: age, inc: income, racem1: race, educ2: education}
         }).then(function (data) {
             // console.log(data);
-            for(let x in data){
-                if(data[x].eminuse == 1){
-                    usrYes++;
-                }else{
-                    usrNo++;
-                }
-            }
-            console.log(usrYes, usrNo)
+            let user = [];
+            user.push(eminuse(data));
+            console.log(user);
         });
 
     }
@@ -29,3 +24,17 @@ let getData = {
 };
 
 getData.stats(1, 25, 6, 1, 6);
+
+let eminuse = function (data) {
+    let usrYes=0;
+    let usrNo=0;
+    for(let x in data){
+        if(data[x].eminuse == 1){
+            usrYes++;
+        }else{
+            usrNo++;
+        }
+    }
+    let total = usrNo + usrYes;
+    return({'eminuse': {'1':  parseInt((usrYes/total)*100), '2' :parseInt((usrNo/total)*100)}});
+};
