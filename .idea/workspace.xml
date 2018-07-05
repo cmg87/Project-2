@@ -19,8 +19,8 @@
       <file leaf-file-name="logic.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/logic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+            <state relative-caret-position="-1397">
+              <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -28,8 +28,8 @@
       <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18870">
-              <caret line="1258" column="16" selection-start-line="1258" selection-start-column="16" selection-end-line="1258" selection-end-column="16" />
+            <state relative-caret-position="-7470">
+              <caret line="1344" column="17" selection-start-line="1344" selection-start-column="17" selection-end-line="1344" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -183,11 +183,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40153000" />
+    <option name="totallyTimeSpent" value="43707000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1661699" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -404,15 +403,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18870">
-          <caret line="1258" column="16" selection-start-line="1258" selection-start-column="16" selection-end-line="1258" selection-end-column="16" />
+        <state relative-caret-position="-7470">
+          <caret line="1344" column="17" selection-start-line="1344" selection-start-column="17" selection-end-line="1344" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+        <state relative-caret-position="-1397">
+          <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
         </state>
       </provider>
     </entry>
