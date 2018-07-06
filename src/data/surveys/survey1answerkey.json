@@ -94,34 +94,142 @@
             }
         },
 
-        "DEVICE1": {
-            "type": "multi-sub",
-            "text": "Which of the following items do you own?",
+        "DEVICE1a": {
+            "type": "multi",
+            "text": "Do you own a tablet?",
             "choices":{
-                "a":"Tablet",
-                "b":"Desktop or Laptop",
-                "c":"Gaming Console"
-            },
-            "sub_choices":{
                 "1":"Yes",
                 "2":"No"
             }
         },
 
-        "WEB1": {
-            "type": "multi-sub",
-            "text": "Please tell me if you ever use any of the following social media sites online or on your cell phone.",
+        "DEVICE1b": {
+            "type": "multi",
+            "text": "Do you own a desktop or laptop?",
             "choices":{
-                "a":"Twitter",
-                "b":"Instagram",
-                "c":"Facebook",
-                "d":"Snapchat",
-                "e":"YouTube",
-                "f":"WhatsApp",
-                "g":"Pinterest",
-                "h":"LinkedIn"
+                "1":"Yes",
+                "2":"No"
+            }
+        },
+
+        "DEVICE1c": {
+            "type": "multi",
+            "text": "Do you own a gaming console?",
+            "choices":{
+                "1":"Yes",
+                "2":"No"
+            }
+        },
+
+        "WEB1a": {
+            "type": "multi",
+            "text": "Do you ever use Twitter online or on your cell phone.",
+            "choices":{
+                "1":"Yes",
+                "2":"No"
             },
-            "sub_choices":{
+            "conditions": {
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
+                "relation": "or"
+            }
+        },
+
+        "WEB1b": {
+            "type": "multi",
+            "text": "Do you ever use Instagram online or on your cell phone.",
+            "choices":{
+                "1":"Yes",
+                "2":"No"
+            },
+            "conditions": {
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
+                "relation": "or"
+            }
+        },
+
+        "WEB1c": {
+            "type": "multi",
+            "text": "Do you ever use Facebook online or on your cell phone.",
+            "choices":{
+                "1":"Yes",
+                "2":"No"
+            },
+            "conditions": {
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
+                "relation": "or"
+            }
+        },
+
+        "WEB1d": {
+            "type": "multi",
+            "text": "Do you ever use Snapchat online or on your cell phone.",
+            "choices":{
+                "1":"Yes",
+                "2":"No"
+            },
+            "conditions": {
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
+                "relation": "or"
+            }
+        },
+
+        "WEB1e": {
+            "type": "multi",
+            "text": "Do you ever use YouTube online or on your cell phone.",
+            "choices":{
+                "1":"Yes",
+                "2":"No"
+            },
+            "conditions": {
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
+                "relation": "or"
+            }
+        },
+
+        "WEB1f": {
+            "type": "multi",
+            "text": "Do you ever use WhatsApp online or on your cell phone.",
+            "choices":{
+                "1":"Yes",
+                "2":"No"
+            },
+            "conditions": {
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
+                "relation": "or"
+            }
+        },
+
+        "WEB1g": {
+            "type": "multi",
+            "text": "Do you ever use Pinterest online or on your cell phone.",
+            "choices":{
+                "1":"Yes",
+                "2":"No"
+            },
+            "conditions": {
+                "EMINUSE": "1",
+                "INTMOB": "1",
+                "DEVICE1a": "1",
+                "relation": "or"
+            }
+        },
+
+        "WEB1h": {
+            "type": "multi",
+            "text": "Do you ever use LinkedIn online or on your cell phone.",
+            "choices":{
                 "1":"Yes",
                 "2":"No"
             },
@@ -208,16 +316,43 @@
             }
         },
 
-        "PIAL5": {
-            "type": "multi-sub",
-            "text": "How difficult would it be, if at all, to give up the following things in your life?",
+        "PIAL5a": {
+            "type": "multi",
+            "text": "How difficult would it be, if at all, to give up your television in your life?",
             "choices":{
-                "a":"Your television",
-                "b":"Cell phone",
-                "c":"Internet",
-                "d":"Social media"
-            },
-            "sub_choices":{
+                "1":"Very",
+                "2":"Somewhat",
+                "3":"Not too hard",
+                "4":"Not hard at all"
+            }
+        },
+
+        "PIAL5b": {
+            "type": "multi",
+            "text": "How difficult would it be, if at all, to give up your cell phone in your life?",
+            "choices":{
+                "1":"Very",
+                "2":"Somewhat",
+                "3":"Not too hard",
+                "4":"Not hard at all"
+            }
+        },
+
+        "PIAL5c": {
+            "type": "multi",
+            "text": "How difficult would it be, if at all, to give up the internet in your life?",
+            "choices":{
+                "1":"Very",
+                "2":"Somewhat",
+                "3":"Not too hard",
+                "4":"Not hard at all"
+            }
+        },
+
+        "PIAL5d": {
+            "type": "multi",
+            "text": "How difficult would it be, if at all, to give up social media in your life?",
+            "choices":{
                 "1":"Very",
                 "2":"Somewhat",
                 "3":"Not too hard",
@@ -254,15 +389,36 @@
             "text": "During the past 12 months, about how many BOOKS did you read either all or part of the way through? Please include any print, electronic, or audiobooks you may have read or listened to."
         },
         
-        "BOOKS2": {
-            "type": "multi-sub",
-            "text": "Thinking about all of the books you have read in the past 12 months, were any of those..",
+        "BOOKS2a": {
+            "type": "multi",
+            "text": "Thinking about all of the books you have read in the past 12 months, were any of those printed books?",
             "choices":{
-                "a":"Printed books",
-                "b":"Audio books",
-                "c":"E-books"
+                "1": "Yes",
+                "2": "No"
             },
-            "sub_choices": {
+            "conditions":{
+                "BOOKS1": 1,
+                "relation": "greater than"
+            }
+        },
+
+        "BOOKS2b": {
+            "type": "multi",
+            "text": "Thinking about all of the books you have read in the past 12 months, were any of those audio books?",
+            "choices":{
+                "1": "Yes",
+                "2": "No"
+            },
+            "conditions":{
+                "BOOKS1": 1,
+                "relation": "greater than"
+            }
+        },
+
+        "BOOKS2c": {
+            "type": "multi",
+            "text": "Thinking about all of the books you have read in the past 12 months, were any of those e-books?",
+            "choices":{
                 "1": "Yes",
                 "2": "No"
             },
