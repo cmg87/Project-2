@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UserForm from '../components/UserForm';
+import UserForm3 from '../components/UserForm3';
 
 class UserInfo extends Component {
   render() {
@@ -8,7 +8,7 @@ class UserInfo extends Component {
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
             <div className="well">
-              <UserForm />
+              <UserForm3 />
             </div>
           </div>
         </div>

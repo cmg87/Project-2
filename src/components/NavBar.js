@@ -5,10 +5,10 @@ import { NavLink } from "react-router-dom";
 
 
 class NavBar extends Component {
-    render() {
-        return (
-          <div>
-          <Nav className="navbar navbar-default navbar-static-top">
+  render() {
+    return (
+      <div>
+        <Nav className="navbar navbar-default navbar-static-top">
           <div className="container">
             <div className="navbar-header">
               <Button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -17,10 +17,10 @@ class NavBar extends Component {
                 <span className="icon-bar"></span>
               </Button>
               <a className="navbar-brand" href="/">
-                <img className="nav-logo" src="./assets/images/brand-logo-kwiri.png" alt="Kwiri"/>
+                <img className="nav-logo" src="./assets/images/brand-logo-kwiri.png" alt="Kwiri" />
               </a>
             </div>
-      
+
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
                 <li>
@@ -39,9 +39,9 @@ class NavBar extends Component {
             </div>
           </div>
         </Nav>
-        </div>
-        )
-    }
+      </div>
+    )
+  }
 }
 
 export default NavBar;

@@ -1,7 +1,6 @@
 
-
 module.exports = function(sequelize, DataTypes) {
-	let Data = sequelize.define('data', {
+	let data = sequelize.define('data', {
 		respid: {
 			type: DataTypes.INTEGER(10),
 			allowNull: true,
