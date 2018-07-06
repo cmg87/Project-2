@@ -3,7 +3,7 @@ let Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 let getData = {
 
-    stats: function (gender, age, income, race, education) {
+    stats: function ({sex :gender, age: age, inc: income, racem1: race, educ2: education}) {
         //switch function for defining the age range of each user
         switch (true) {
             case(age <= 29):
@@ -90,7 +90,7 @@ let results2 = function (data, question) {
     let usrNo = 0;
     let other = 0;
     for (let x in data) {
-        if (data[x][question] == 1 ) {
+        if (data[x][question] == 1) {
             usrYes++;
         } else if (data[x][question] == 2) {
             usrNo++;
@@ -127,10 +127,6 @@ let results3 = function (data, question) {
         '3': parseInt((other / total) * 100)
     });
 };
-
-
-
-
 
 
 let scale = function (data, question) {
