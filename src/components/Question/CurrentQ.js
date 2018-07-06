@@ -47,6 +47,11 @@ class CurrentQ extends Component {
             subColumns.push(<td key={k}><form id={alpha[k]}>{subChoices}</form></td>);
         }
 
+        // Clear checked radio buttons
+        let ele = document.getElementsByName("optionsRadios");
+        for(let i=0;i<ele.length;i++)
+           ele[i].checked = false;
+
         return (
             <table className="table">
                 <thead>
@@ -67,7 +72,6 @@ class CurrentQ extends Component {
     submitMulti(value) {
         let answer = {};
         answer[this.props.code] = value;
-        console.log(answer);
         this.props.updateAnswers(answer);
         this.props.nextQuestion();
     }
@@ -76,7 +80,6 @@ class CurrentQ extends Component {
         let answer = {};
         let value = document.getElementById("answerInput").value;
         answer[this.props.code] = value;
-        console.log(value);
         this.props.updateAnswers(answer);
         this.props.nextQuestion();
     }
@@ -100,7 +103,6 @@ class CurrentQ extends Component {
                 }
             }
         }
-        console.log(answer);
         this.props.updateAnswers(answer);
         this.props.nextQuestion();
     }

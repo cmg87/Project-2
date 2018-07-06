@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import Result from '../components/Results/Result';
 
 class Results extends Component {
     render() {
         return (
-            <div id="resultsContainer" className="container">
-                results placeholder
-            </div>
+            <Result survey={this.props.survey} answers={this.props.answers} />
         );
     }
 }

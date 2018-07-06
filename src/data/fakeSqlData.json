@@ -1,142 +1,17 @@
 [
-  {
-    "EMINUSE": {
-      "total": {
-        "amount": 2002,
-        "yes": 1720,
-        "yesPerc": "86%",
-        "no": 282,
-        "noPerc": "14%"
-      },
-      "sex": {
-        "male": {
-          "amount": 980,
-          "yes": 841,
-          "yesPerc": "86%",
-          "no": 138,
-          "noPerc": "14%"
+    {
+        "EMINUSE": {
+            "1": 88,
+            "2": 12
         },
-        "female": {
-          "amount": 1022,
-          "yes": 879,
-          "yesPerc": "86%",
-          "no": 143,
-          "noPerc": "14%"
+        "INTFREQ": {
+            "1": 48,
+            "2": 12,
+            "3": 18,
+            "4": 22
+        },
+        "DEVICE1a": {
+            "1": 50,
+            "2": 50
         }
-      },
-      "race": {
-        "white": {
-          "amount": 1207,
-          "yes": 1066,
-          "yesPerc": "88%",
-          "no": 141,
-          "noPerc": "12%"
-        },
-        "black": {
-          "amount": 240,
-          "yes": 198,
-          "yesPerc": "82%",
-          "no": 42,
-          "noPerc": "18%"
-        },
-        "hisp": {
-          "amount": 321,
-          "yes": 257,
-          "yesPerc": "80%",
-          "no": 63,
-          "noPerc": "20%"
-        }
-      },
-      "age": {
-        "18-29": {
-          "amount": 433,
-          "yes": 421,
-          "yesPerc": "97%",
-          "no": 12,
-          "noPerc": "3%"
-        },
-        "30-49": {
-          "amount": 653,
-          "yes": 611,
-          "yesPerc": "94%",
-          "no": 42,
-          "noPerc": "6%"
-        },
-        "50-64": {
-          "amount": 505,
-          "yes": 421,
-          "yesPerc": "83%",
-          "no": 83,
-          "noPerc": "17%"
-        },
-        "65+": {
-          "amount": 374,
-          "yes": 236,
-          "yesPerc": "63%",
-          "no": 138,
-          "noPerc": "37%"
-        }
-      },
-      "education": {
-        "LT HS": {
-          "amount": 187,
-          "yes": 107,
-          "yesPerc": "57%",
-          "no": 79,
-          "noPerc": "42%"
-        },
-        "HS GRAD": {
-          "amount": 962,
-          "yes": 771,
-          "yesPerc": "84%",
-          "no": 152,
-          "noPerc": "16%"
-        },
-        "SOME COLL": {
-          "amount": 621,
-          "yes": 564,
-          "yesPerc": "91%",
-          "no": 58,
-          "noPerc": "9%"
-        },
-        "COLL GRAD +": {
-          "amount": 583,
-          "yes": 561,
-          "yesPerc": "62%",
-          "no": 22,
-          "noPerc": "4%"
-        }
-      },
-      "income": {
-        "<30k": {
-          "amount": 603,
-          "yes": 463,
-          "yesPerc": "77%",
-          "no": 139,
-          "noPerc": "23%"
-        },
-        "30,000-49,999": {
-          "amount": 290,
-          "yes": 265,
-          "yesPerc": "91%",
-          "no": 25,
-          "noPerc": "9%"
-        },
-        "50,000-74,999": {
-          "amount": 217,
-          "yes": 207,
-          "yesPerc": "95%",
-          "no": 10,
-          "noPerc": "5%"
-        },
-        "75,000 +": {
-          "amount": 572,
-          "yes": 555,
-          "yesPerc": "97%",
-          "no": 17,
-          "noPerc": "3%"
-        }
-      }
-    }
-  }
 ]
