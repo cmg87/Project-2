@@ -19,6 +19,7 @@ const apiRouting = (app)=>{
 
     app.get('/api/estResults', (req,res)=>{
         res.json(dummy);
+    })
 
     app.get('/api/getResults', (req,res)=>{
         const params = req.body.params
