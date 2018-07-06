@@ -79,7 +79,7 @@ CREATE TABLE data (
 
 
 
-LOAD DATA LOCAL INFILE '/var/lib/mysql-files/survey.csv'
+LOAD DATA LOCAL INFILE 'survey.csv'
 INTO TABLE data
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
