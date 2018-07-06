@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Question from '../components/Question';
+import Question from '../components/Question/Question';
 
 class Survey extends Component {
     render() {

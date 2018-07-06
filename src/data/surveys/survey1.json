@@ -64,18 +64,6 @@
             }
         },
 
-        "BBHOME2": {
-            "type": "multi",
-            "text": "Just to confirm, you use a dial-up connection to the internet at home, and Not a higher-speed broadband connection?",
-            "choices":{
-                "1":"Yes, dial-up",
-                "2":"No, higher-speed connection"
-            },
-            "conditions": {
-                "BBHOME1": "1"
-            }
-        },
-
         "DEVICE1a": {
             "type": "multi",
             "text": "Next, do you have a cell phone, or Not?",
@@ -110,9 +98,9 @@
             "type": "multi-sub",
             "text": "Which of the following items do you own?",
             "choices":{
-                "1":"Tablet",
-                "2":"Desktop or Laptop",
-                "3":"Gaming Console"
+                "a":"Tablet",
+                "b":"Desktop or Laptop",
+                "c":"Gaming Console"
             },
             "sub_choices":{
                 "1":"Yes",
