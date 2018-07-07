@@ -18,7 +18,7 @@ class Panels extends Component {
                     {this.props.summary}
                     <br />
                     <br />
-                    <Button className="btn" style={buttonStyle} href="/#/survey">Go</Button>
+                    <Button className="btn" style={buttonStyle} href="/#/user">Go</Button>
                 </Panel.Body>
             </Panel>          
         </div>

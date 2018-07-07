@@ -4,7 +4,7 @@ USE pew_data_db;
 
 
 CREATE TABLE data (
- respid Int(10),
+    respid Int(10),
     sample Int(10),
     comp Int(10),
     int_date Int(10),
@@ -79,7 +79,7 @@ CREATE TABLE data (
 
 
 
-LOAD DATA LOCAL INFILE '/var/lib/mysql-files/survey.csv'
+LOAD DATA LOCAL INFILE 'survey.csv'
 INTO TABLE data
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
