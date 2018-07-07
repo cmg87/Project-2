@@ -4,7 +4,7 @@ USE pew_data_db;
 
 
 CREATE TABLE data (
- respid Int(10),
+    respid Int(10),
     sample Int(10),
     comp Int(10),
     int_date Int(10),
