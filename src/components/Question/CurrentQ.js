@@ -20,7 +20,7 @@ class CurrentQ extends Component {
     createChoices() {
         let choicesBuild = [];
         for (let i=0;i<this.props.choices.length;i++) {
-            choicesBuild.push(<Button onClick={(e) => this.submitMulti(this.props.choices[i][0], e)} bsStyle="primary" value={this.props.choices[i][0]} id={this.props.choices[i][1]} key={i}>{this.props.choices[i][1]}</Button>);
+            choicesBuild.push(<Button onClick={(e) => this.submitMulti(this.props.choices[i][0], e)} className="kw-btn btn-default" value={this.props.choices[i][0]} id={this.props.choices[i][1]} key={i}><span className="kw-gly glyphicon glyphicon-chevron-right" aria-hidden="true"></span>{this.props.choices[i][1]}</Button>);
         }
         return <div style={buttonStyle}>{choicesBuild}</div>
     }
@@ -138,7 +138,7 @@ class CurrentQ extends Component {
                     <input type="number" className="form-control" id="answerInput" placeholder="Enter number here" />
                     <br />
                     <br />
-                    <Button bsStyle="primary" onClick={this.submitNumber}>Submit</Button>
+                    <Button className="kw-sbmt default" onClick={this.submitNumber}>Submit</Button>
                 </Panel.Body>
             </Panel>
             )
@@ -157,7 +157,7 @@ class CurrentQ extends Component {
                     <br />
                     {this.createChoicesSub()}
                     <br />
-                    <div style={buttonStyle}><Button bsStyle="primary" onClick={this.submitMultiSub}>Submit</Button></div>
+                    <div style={buttonStyle}><Button className="kw-nxt default" onClick={this.submitMultiSub}>Next</Button></div>
                 </Panel.Body>
             </Panel>
             );

@@ -4,7 +4,7 @@ import UserInfo from '../components/UserInfo';
 class User extends Component {
     render() {
         return (
-            <div id="userSurveyContainer" className="userContainer">
+            <div id="surveyContainer" className="container">
                 <UserInfo />
             </div>
         );
