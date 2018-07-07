@@ -42,10 +42,11 @@ class Vizualization extends Component {
                         <h3 class="panel-title">'+text+'</h3> \
                     </div> \
                     <div class="panel-body"> \
-                        <div style="float:left"> \
-                            <h3>Your answer: '+response+'</h3> \
+                        <div class="container" style="float:left;width:50%;text-align:center;"> \
+                            <h3 style="font-size:3em;">Your answer:</h3> \
+                            <h2 style="font-size:4.5em;">'+response+'</h2> \
                         </div> \
-                        <div class="chart-container" style="position: relative; height:30vh; width:30vw; float:right"> \
+                        <div class="chart-container" style="position: relative; height:20vw; width:30vw; float:right; margin-right:30px"> \
                         <canvas id="'+code+'">&nbsp;</canvas> \
                         </div> \
                     </div> \

@@ -8,6 +8,8 @@ class UserForm5 extends Component {
     fetch("/api/addUser", { method, body })
       .then(res => res.json())
       .then(data => alert(JSON.stringify(data.form, null, "\t")));
+    // Redirect to survey
+    window.location("/#/survey");
   }
   render() {
     return (
