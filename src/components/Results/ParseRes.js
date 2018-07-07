@@ -31,6 +31,7 @@ class ParseRes extends Component {
                 // Add answers object as value for parsedRes
                 this.parsedRes[code] = answersObj;
             }
+
         }
     }
 

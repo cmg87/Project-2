@@ -1,6 +1,6 @@
 const survey1 = require('../src/data/surveys/survey1.json')
 
-const dummy = require('../src/data/fakeSqlData.json')
+const totals = require('../src/data/raw_results/pew_raw_results.json')
 
 const getData = require('../logic')
 
@@ -14,7 +14,7 @@ const apiRouting = (app)=>{
 
 
     app.get('/api/estResults', (req,res)=>{
-        res.json(dummy);
+        res.json(totals);
     })
 
     app.get('/api/getResults', (req,res)=>{
