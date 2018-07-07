@@ -10,15 +10,15 @@ class Panels extends Component {
     render() {
       return (
         <div>
-            <Panel className="panel panel-default">
-                <Panel.Heading>
-                    <Panel.Title>{this.props.title}</Panel.Title>
+            <Panel className="panel panel-default listedPanel">
+                <Panel.Heading className="listedHeading">
+                    <Panel.Title className="listedTitle">{this.props.title}</Panel.Title>
                 </Panel.Heading>
-                <Panel.Body>
+                <Panel.Body className="listedBody">
                     {this.props.summary}
                     <br />
                     <br />
-                    <Button className="btn" style={buttonStyle} href="/#/survey">Go</Button>
+                    <Button className="btn" style={buttonStyle} href="/#/survey">Begin This Survey</Button>
                 </Panel.Body>
             </Panel>          
         </div>
