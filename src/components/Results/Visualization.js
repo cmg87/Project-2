@@ -46,7 +46,7 @@ class Vizualization extends Component {
                             <h3 style="font-size:3em;">Your answer:</h3> \
                             <h2 style="font-size:4.5em;">'+response+'</h2> \
                         </div> \
-                        <div class="chart-container" style="position: relative; height:20vw; width:35vw; float:right; margin-right:30px"> \
+                        <div class="chart-container" style="position: relative; height:20vw; width:30vw; float:right; margin-right:30px"> \
                         <canvas id="'+code+'">&nbsp;</canvas> \
                         </div> \
                     </div> \
