@@ -12,10 +12,6 @@ const apiRouting = (app)=>{
     })
 
 
-    // app.get('/api/estResults', (req,res)=>{
-    //     const params = req.body.params
-    //     // Do magic to query database and send back survey results based on optionally provided params
-    // })
 
     app.get('/api/estResults', (req,res)=>{
         res.json(dummy);
@@ -27,17 +23,13 @@ const apiRouting = (app)=>{
 
     })
 
-    app.post('/api/sendResults', (req,res)=>{
-        // Get user answers object from request body
-        const user_results = req.body.results
-        // Do magic that adds user results to database
-    })
-
     app.post('/api/addUser', (req,res)=>{
         // Get user information when starting a survey
-        const newUser = req.body
+        const user = req.body
+        console.log(user)
+        getData.newUser(user)
         // Do magic that adds user information to database
-        console.log(newUser)        
+
     })    
 }
 
