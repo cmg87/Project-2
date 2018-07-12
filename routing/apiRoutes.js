@@ -24,7 +24,6 @@ const apiRouting = (app)=>{
     })
 
     app.post('/api/addUser', (req,res)=>{
-        // Get user information when starting a survey
         const user = req.body
         console.log(user)
         getData.newUser(user)
